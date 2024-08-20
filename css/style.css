@@ -10,7 +10,7 @@
    --orange:#f39c12;
    --light-color:#000000;
    --light-bg:#eee;
-   --black:#2c3e50;
+   --black:#0b50a4;
    --white:#fff;
    --border:.1rem solid rgba(0,0,0,.2);
 }
@@ -54,10 +54,10 @@ body{
 
 body.dark{
    --light-color:#a09393;
-   --light-bg:#151414;
+   --light-bg:#1a1a1a ;
    --black:#fff;
-   --white:#080808;
-   --border:.5rem solid rgba(57, 101, 195, 0.2);
+   --white:#0c0c0c;
+   --border:.5rem solid #0b50a4
 }
 
 body.active{
@@ -71,9 +71,10 @@ section{
 }
 
 .heading{
-   font-size: 2.5rem;
+   text-align: center;
+   font-size: 3.0rem;
    color:var(--black);
-   margin-bottom: 2.5rem;
+   margin-bottom: 2rem;
    border-bottom: var(--border);
    padding-bottom: 1.5rem;
    text-transform: capitalize;
@@ -155,10 +156,11 @@ section{
    align-items: center;
    justify-content: space-between;
    position:relative;
-   padding: 2rem 2.5rem;
-   border-radius: 25px;
+   padding: 1.2rem 2.5rem;
+   border-radius: 20px; 
    /* width:max-content; */
    height: auto;
+   width: auto;
 }
 
 .header .flex .logo{
@@ -1165,24 +1167,27 @@ section{
 }
 
 .contact .row{
-   display: flex;
+   display:flex;
    align-items: center;
    flex-wrap: wrap;
    gap: 1.5rem;
 }
-
+/* 
 .contact .row .image{
    flex: 1 1 50rem;
 }
 
 .contact .row .image img{
    width: 100%;
-}
+} */
 
 .contact .row form{
-   flex: 1 1 30rem;
+   margin: auto;
+   border-radius: 20px;
+   max-width: 350px;
+   flex: 1 1 3rem;
    background-color: var(--white);
-   padding: 2rem;
+   padding: 1.5rem;
    text-align: center;
 }
 
@@ -1195,7 +1200,7 @@ section{
 
 .contact .row form .box{
    width: 100%;
-   border-radius: .5rem;
+   border-radius: 2rem;
    background-color: var(--light-bg);
    margin: 1rem 0;
    padding: 1.4rem;
@@ -1204,7 +1209,7 @@ section{
 }
 
 .contact .row form textarea{
-   height: 20rem;
+   height: 15rem;
    resize: none;
 }
 
@@ -1293,7 +1298,7 @@ section{
 
 
 
-
+/* 
 .footer{
    background-color: var(--white);
    border-top: var(--border);
@@ -1305,12 +1310,12 @@ section{
    color:var(--black);
    margin-top: 1rem;
    z-index: 1000;
-   /* padding-bottom: 9.5rem; */
+   padding-bottom: 9.5rem;
 }
 
 .footer span{
    color:var(--main-color);
-}
+} */
 
 
 
@@ -1419,5 +1424,70 @@ html {
  
  ::-webkit-scrollbar-thumb:hover {
    background-color: #555;
+ }
+ 
+
+
+
+
+
+ .footer {
+   background-color: #101010;
+   color: #fff;
+   padding: 20px 0;
+   text-align: center;
+   max-width: 960px; /* Set the maximum width of the footer */
+   margin: 0 auto; /* Center the footer */
+   border-radius: 10px; /* Optional: Add some rounding to the corners */
+ }
+ 
+ .footer-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   padding: 0 20px;
+   flex-wrap: wrap;
+ }
+ 
+ /* .footer-left, .footer-center, .footer-right {
+   flex: 1;
+   padding: 20px;
+   min-width: 200px;
+ }
+ 
+ .footer-left h2, .footer-center h2, .footer-right h2 {
+   margin-bottom: 20px;
+   font-size: 1.5em;
+ }
+ 
+ .footer-left p, .footer-right p {
+   margin-bottom: 15px;
+   font-size: 1em;
+   line-height: 1.6;
+ }
+ 
+ .footer-center ul {
+   list-style: none;
+   padding: 0;
+ }
+ 
+ .footer-center ul li {
+   margin-bottom: 10px;
+ }
+ 
+ .footer-center ul li a {
+   color: #fff;
+   text-decoration: none;
+   font-size: 1em;
+ }
+ 
+ .footer-center ul li a:hover {
+   text-decoration: underline;
+ } */
+ 
+ .footer-bottom {
+   margin-top: 1px;
+   font-size: 0.9em;
+   color: #ccc;
  }
  
