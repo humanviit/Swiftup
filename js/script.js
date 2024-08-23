@@ -79,7 +79,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 function storeFormData(event) {
-   // event.preventDefault(); // Prevent form from submitting and redirecting
+   event.preventDefault(); // Prevent form from submitting and redirecting
    
    const name = document.getElementById('name').value;
    const email = document.getElementById('email').value;
