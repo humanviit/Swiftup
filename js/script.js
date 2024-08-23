@@ -105,7 +105,7 @@ function storeFormData(event) {
    setTimeout(function(){
       popup.classList.remove("show");
       // Add an action here, such as redirecting to another page
-      // window.location.href = "thankyou.html"; // Example: Redirect to another page
+      window.location.href = "register.html"; // Example: Redirect to another page
    }, 3000);
 
    event.target.reset(); // Clear the form
