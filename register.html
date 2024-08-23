@@ -12,6 +12,52 @@
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
+
+   <style>
+      /* Basic styling for the popup */
+      #popup {
+         visibility: hidden;
+         width: 300px;
+         background-color: #4CAF50;
+         color: white;
+         text-align: center;
+         border-radius: 5px;
+         padding: 15px;
+         position: fixed;
+         z-index: 1;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         font-size: 18px;
+      }
+
+      #popup.show {
+         visibility: visible;
+         -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+         animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+
+      @-webkit-keyframes fadein {
+         from {opacity: 0;} 
+         to {opacity: 1;}
+      }
+
+      @keyframes fadein {
+         from {opacity: 0;}
+         to {opacity: 1;}
+      }
+
+      @-webkit-keyframes fadeout {
+         from {opacity: 1;} 
+         to {opacity: 0;}
+      }
+
+      @keyframes fadeout {
+         from {opacity: 1;}
+         to {opacity: 0;}
+      }
+   </style>
+
 </head>
 <body>
 
@@ -45,6 +91,8 @@
          </div>
    
       </section>
+
+      
    
    </header>   
    
@@ -90,8 +138,47 @@
 
 </section>
 
+   <div id="popup">Form data saved successfully!</div>
+
 
 <!-- custom js file link  -->
+<script>
+   function storeFormData(event) {
+      event.preventDefault(); // Prevent form from submitting and redirecting
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('pass').value;
+      const confirmPassword = document.getElementById('c_pass').value;
+
+      // Basic validation to check if passwords match
+      if (password !== confirmPassword) {
+         alert("Passwords do not match!");
+         return;
+      }
+
+      // Store form data in localStorage
+      localStorage.setItem('name', name);
+      localStorage.setItem('email', email);
+      localStorage.setItem('password', password);
+
+      // Show the popup
+      const popup = document.getElementById("popup");
+      popup.classList.add("show");
+
+      // Hide the popup after 3 seconds and perform an action
+      setTimeout(function(){
+         popup.classList.remove("show");
+         // Add an action here, such as redirecting to another page
+         // window.location.href = "thankyou.html"; // Example: Redirect to another page
+      }, 3000);
+
+      event.target.reset(); // Clear the form
+   }
+</script>
+
+
+   
 <script src="js/script.js"></script>
 
    
