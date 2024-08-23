@@ -78,31 +78,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
+function storeFormData(event) {
+   // event.preventDefault(); // Prevent form from submitting and redirecting
+   
+   const name = document.getElementById('name').value;
+   const email = document.getElementById('email').value;
+   const password = document.getElementById('pass').value;
+   const confirmPassword = document.getElementById('c_pass').value;
 
-
-function storeFormData(event) 
-{
-      event.preventDefault(); // Prevent form submission
-      
-      // Get form data
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('pass').value;
-      const confirmPassword = document.getElementById('c_pass').value;
-      
-      // Validate passwords
-      if (password !== confirmPassword) {
-         alert("Passwords do not match!");
-         return;
-      }
-
-      // Store data in local storage
-      localStorage.setItem('name', name);
-      localStorage.setItem('email', email);
-      localStorage.setItem('password', password);
-      
-      alert("Registration data saved in local storage!");
-
-      // Optionally, you can clear the form after storing the data
-      document.querySelector('form').reset();
+   // Basic validation to check if passwords match
+   if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
    }
+
+   // Store form data in localStorage
+   localStorage.setItem('name', name);
+   localStorage.setItem('email', email);
+   localStorage.setItem('password', password);
+
+   // Show the popup
+   const popup = document.getElementById("popup");
+   popup.classList.add("show");
+
+   // Hide the popup after 3 seconds and perform an action
+   setTimeout(function(){
+      popup.classList.remove("show");
+      // Add an action here, such as redirecting to another page
+      // window.location.href = "thankyou.html"; // Example: Redirect to another page
+   }, 3000);
+
+   event.target.reset(); // Clear the form
+}
