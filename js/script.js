@@ -71,6 +71,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    anchor.addEventListener('click', function(e) {
        e.preventDefault();
 
+function storeFormData(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Get form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('pass').value;
+      const confirmPassword = document.getElementById('c_pass').value;
+      
+      // Validate passwords
+      if (password !== confirmPassword) {
+         alert("Passwords do not match!");
+         return;
+      }
+
+      // Store data in local storage
+      localStorage.setItem('name', name);
+      localStorage.setItem('email', email);
+      localStorage.setItem('password', password);
+      
+      alert("Registration data saved in local storage!");
+
+      // Optionally, you can clear the form after storing the data
+      document.querySelector('form').reset();
+   }
+
        document.querySelector(this.getAttribute('href')).scrollIntoView({
            behavior: 'smooth'
        });
