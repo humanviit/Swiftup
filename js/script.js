@@ -71,7 +71,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    anchor.addEventListener('click', function(e) {
        e.preventDefault();
 
-function storeFormData(event) {
+       document.querySelector(this.getAttribute('href')).scrollIntoView({
+           behavior: 'smooth'
+       });
+   });
+});
+
+
+
+
+function storeFormData(event) 
+{
       event.preventDefault(); // Prevent form submission
       
       // Get form data
@@ -96,9 +106,3 @@ function storeFormData(event) {
       // Optionally, you can clear the form after storing the data
       document.querySelector('form').reset();
    }
-
-       document.querySelector(this.getAttribute('href')).scrollIntoView({
-           behavior: 'smooth'
-       });
-   });
-});
