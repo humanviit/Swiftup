@@ -1336,7 +1336,7 @@ section{
 
    .side-bar.active{
       left: 0;
-      box-shadow: 0 0 0 100vw rgba(0,0,0,.8);
+      /* box-shadow: 0 0 0 100vw rgba(0,0,0,.8); */
       border-right: 0;
    }
 
